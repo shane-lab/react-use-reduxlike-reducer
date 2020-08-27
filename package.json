@@ -6,6 +6,23 @@
   "author": "Shane van den Bogaard <shanevdb@hotmail.nl>",
   "license": "MIT",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shane-lab/react-use-reduxlike-reducer.git"
+  },
+  "homepage": "https://github.com/shane-lab/react-use-reduxlike-reducer#README",
+  "bugs": {
+    "url": "https://github.com/shane-lab/react-use-reduxlike-reducer/issues"
+  },
+  "keywords": [
+    "react-use-reduxlike-reducer",
+    "react",
+    "react hooks",
+    "state",
+    "reducer",
+    "redux",
+    "reduxer"
+  ],
   "peerDependencies": {
     "react": "^16.13.1"
   },
