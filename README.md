@@ -21,7 +21,7 @@ const fetchMyData = async (dispatch) => {
   dispatch({ type: 'LOADING', payload: true });
 
   const myData = await myApiClient.getData();
-  await dispatch({ type: 'NEW_DATA', payload: myData });
+  dispatch({ type: 'NEW_DATA', payload: myData });
 
   dispatch({ type: 'LOADING', payload: false });
 };
@@ -56,6 +56,19 @@ const MyComponent = () => {
   );
 }
 
+```
+
+The second argument of an action is a method to get your current state. This way, you can get the changed state in between dispatches.
+
+```js
+
+const myAction = async (dispatch, getState) => {
+  const stateBeforeDispatch = getState();
+  
+  dispatch({ ... });
+
+  const stateAfterDispatch = getState();
+};
 ```
 
 See the examples folder for [an use case](./examples/counter/my-component.tsx) using reducer + context Hooks in combination with TypeScript.
