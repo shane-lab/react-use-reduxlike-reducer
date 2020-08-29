@@ -14,7 +14,7 @@ By default, `useReducer` does not provide an easy way to dispatch asynchronous a
 `react-use-reduxlike-reducer` is a package that exposes a factory method to create a wrapper around the `useReducer` hook that will make your actions behave like actions from React Redux or React Saga. This package is built with TypeScript and is completely typesafe.
 
 ```jsx
-
+import React from 'react';
 import { createReducerFactory } = from 'react-use-reduxlike-reducer';
 
 const fetchMyData = async (dispatch) => {
@@ -49,16 +49,17 @@ const MyComponent = () => {
       </ul>
       <button
         disabled={state.loading}
-        onClick={() => dispatch(fetchData)}>
+        onClick={() => dispatch(fetchMyData)}>
         load data
       </button>
     </>
   );
 }
 
+export default MyComponent;
 ```
 
-The second argument of an action is a method to get your current state. This way, you can get the changed state in between dispatches.
+The second argument of an action is a method to get your current state when the action dispatch. This object is immutable.
 
 ```js
 
@@ -68,6 +69,8 @@ const myAction = async (dispatch, getState) => {
   dispatch({ ... });
 
   const stateAfterDispatch = getState();
+  
+  assert(stateBeforeDispatch === stateAfterDispatch);
 };
 ```
 
