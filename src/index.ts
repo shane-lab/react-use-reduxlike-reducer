@@ -27,4 +27,4 @@ export const createReducerFactory = <TAction, TState>(reducer: Reducer<TState, T
     await actionHandler(dispatch, () => Object.freeze(state)));
 
   return [state, dispatchAsync] as ContextTuple<TAction, TState>;
-}
+};
