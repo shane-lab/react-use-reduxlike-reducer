@@ -1,6 +1,6 @@
 {
   "name": "react-use-reduxlike-reducer",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A React reducer hook for Redux-like actions and reducers",
   "main": "dist/index.js",
   "author": "Shane van den Bogaard <shanevdb@hotmail.nl>",
